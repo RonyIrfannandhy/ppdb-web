@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Jul 2022 pada 15.06
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.0.13
+-- Generation Time: Jul 15, 2026 at 04:32 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbadmin`
+-- Table structure for table `tbadmin`
 --
 
 CREATE TABLE `tbadmin` (
@@ -32,21 +32,22 @@ CREATE TABLE `tbadmin` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbadmin`
+-- Dumping data for table `tbadmin`
 --
 
 INSERT INTO `tbadmin` (`id`, `username`, `email`, `password`) VALUES
 (1, 'yuhu', 'yuhu@gmail.com', 'b7f68bb19bde0d7787e67053b4acd3b9'),
 (2, 'oke', 'oke@gmail.com', '0079fcb602361af76c4fd616d60f9414'),
-(3, 'iji', 'iji@gmail.com', 'deab290633293b17ed8eed3a281a7a1b');
+(3, 'iji', 'iji@gmail.com', 'deab290633293b17ed8eed3a281a7a1b'),
+(4, 'admin', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_nilai`
+-- Table structure for table `tb_nilai`
 --
 
 CREATE TABLE `tb_nilai` (
@@ -55,10 +56,10 @@ CREATE TABLE `tb_nilai` (
   `MTK` int(5) NOT NULL,
   `IPA` int(5) NOT NULL,
   `BINGG` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_nilai`
+-- Dumping data for table `tb_nilai`
 --
 
 INSERT INTO `tb_nilai` (`id_nilai`, `BINDO`, `MTK`, `IPA`, `BINGG`) VALUES
@@ -66,12 +67,14 @@ INSERT INTO `tb_nilai` (`id_nilai`, `BINDO`, `MTK`, `IPA`, `BINGG`) VALUES
 ('N202200002', 123, 13, 53, 52),
 ('N202200003', 89, 89, 89, 89),
 ('N202200004', 0, 0, 0, 0),
-('N202200005', 23, 42, 35, 35);
+('N202200005', 23, 42, 35, 35),
+('N202600005', 100, 100, 100, 100),
+('N202600006', 90, 85, 70, 66);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pendaftaran`
+-- Table structure for table `tb_pendaftaran`
 --
 
 CREATE TABLE `tb_pendaftaran` (
@@ -90,10 +93,10 @@ CREATE TABLE `tb_pendaftaran` (
   `raport` int(5) NOT NULL,
   `alamat` text DEFAULT NULL,
   `sumber_informasi` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_pendaftaran`
+-- Dumping data for table `tb_pendaftaran`
 --
 
 INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tgl_daftar`, `th_ajaran`, `jurusan`, `NISN`, `asal_sekolah`, `nm_peserta`, `tmp_lahir`, `tgl_lahir`, `jenis_kelamin`, `no_hp`, `agama`, `raport`, `alamat`, `sumber_informasi`) VALUES
@@ -101,39 +104,40 @@ INSERT INTO `tb_pendaftaran` (`id_pendaftaran`, `tgl_daftar`, `th_ajaran`, `juru
 ('P202200002', '2022-07-14', '2022/2023', '', 13, 'lv svd', 'svd', 'svdcx', '2022-06-30', 'laki-laki', 242, 'Islam', 89, 'bdsgg', 'Alumni'),
 ('P202200003', '2022-07-14', '2022/2023', '', 13, 'lv svd', 'svd', 'svdcx', '2022-06-30', 'laki-laki', 242, 'Islam', 89, 'bdsgg', 'Alumni'),
 ('P202200004', '2022-07-14', '2022/2023', 'Teknik Komputer & Jaringan', 234, 'frbs', 'adfb', '', '0000-00-00', '', 0, '', 0, '', ''),
-('P202200005', '2022-07-17', '2022/2023', 'Teknik Kendaraan Ringan', 942, 'jhfajve f', 'jhfsd', 'jbkfa', '2022-07-17', 'laki-laki', 124132, 'Kristen', 431, 'brgsvnl', 'Alumni');
+('P202600005', '2026-07-11', '2022/2023', 'Farmasi Klinis & Komunitas', 1234567890, 'SMP NEGERI 1 BATAK', 'ADMIN', 'SEMARANG', '2000-06-15', 'laki-laki', 2147483647, 'Islam', 86, 'SMG', 'Internet'),
+('P202600006', '2026-07-14', '2022/2023', 'Teknik Kendaraan Ringan', 1234567888, 'SMP NEGERI 1 Bary', 'Rony', 'smg', '2026-06-29', 'laki-laki', 2147483647, 'Islam', 90, 'smg', 'Guru/Karyawan');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tbadmin`
+-- Indexes for table `tbadmin`
 --
 ALTER TABLE `tbadmin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_nilai`
+-- Indexes for table `tb_nilai`
 --
 ALTER TABLE `tb_nilai`
   ADD PRIMARY KEY (`id_nilai`);
 
 --
--- Indeks untuk tabel `tb_pendaftaran`
+-- Indexes for table `tb_pendaftaran`
 --
 ALTER TABLE `tb_pendaftaran`
   ADD PRIMARY KEY (`id_pendaftaran`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbadmin`
+-- AUTO_INCREMENT for table `tbadmin`
 --
 ALTER TABLE `tbadmin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
